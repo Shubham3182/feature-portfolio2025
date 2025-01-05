@@ -1,0 +1,146 @@
+/* Apply base styles */
+.about-container {
+  padding: 40px;
+  background: linear-gradient(135deg, #ffffff, #f4f4f9); /* Gradient background */
+  color: #333; /* Text color */
+  line-height: 1.6; /* Line height for better readability */
+  font-family: "Roboto", sans-serif; /* Font style */
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards; /* Animation to fade in the entire section */
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: slideInFromTop 1s ease-in-out 0.5s forwards; /* Animation to slide in header */
+}
+
+.about-header h1 {
+  font-size: 36px;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1s forwards; /* Header fade-in */
+}
+
+.about-header p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1.5s forwards; /* Paragraph fade-in */
+}
+
+.about-image {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 2s forwards; /* Fade-in for image */
+  margin: 20px auto;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 900px;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(0.9); /* Start with a slightly smaller image */
+  animation: scaleUp 1s ease-in-out 2s forwards; /* Scale-up animation */
+}
+
+.about-experience {
+  margin: 40px 0;
+  opacity: 0;
+  animation: slideInFromLeft 1s ease-in-out 2.5s forwards; /* Slide-in for experience section */
+}
+
+.about-experience h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.about-experience ul {
+  font-size: 18px;
+  color: #555;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 3s forwards; /* Fade-in for list */
+}
+
+.about-contact {
+  text-align: center;
+  margin-top: 40px;
+  opacity: 0;
+  animation: slideInFromBottom 1s ease-in-out 3.5s forwards; /* Slide-in for contact section */
+}
+
+.contact-button {
+  padding: 10px 20px;
+  background-color: #ff7f50;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 4s forwards; /* Fade-in for button */
+}
+
+.contact-button:hover {
+  background-color: #ff6347;
+  transform: translateY(-5px);
+  transition: transform 0.2s ease;
+}
+
+/* Animation definitions */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

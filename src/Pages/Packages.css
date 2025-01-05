@@ -1,0 +1,221 @@
+/* Main package container */
+.packages {
+  padding: 20px;
+  text-align: center;
+  background: url("../Images/Background1.jpg") no-repeat center center/cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 253, 253, 0.1);
+  height: 100vh; /* Ensure the element has a height for background image to be visible */
+}
+
+/* Grid for packages */
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* Package card styling */
+.package-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/dark_wood.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Hover animation */
+.package-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Ensure the book button is aligned uniformly */
+.package-card .book-btn {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: auto; /* Push button to the bottom */
+}
+
+.package-card .book-btn:hover {
+  background-color: #218838;
+}
+
+.package-card h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.package-card .price {
+  font-size: 1.4rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.package-card .description {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.package-card .features-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 15px;
+}
+
+.package-card .features-list li {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 9999;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+}
+
+/* Modal content */
+.modal-content {
+  background: #fff;
+  padding: 15px; /* Reduced padding */
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: modalFadeIn 0.3s ease-out;
+  height: auto; /* Allow auto height based on content */
+}
+
+/* Compact Form Inputs */
+.booking-form input {
+  width: 100%;
+  padding: 6px; /* Reduced padding for compact input */
+  font-size: 0.9rem; /* Smaller font size */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 8px; /* Reduced margin between inputs */
+}
+
+/* Compact Submit Button */
+.booking-form button.submit-btn {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.booking-form button.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Reduce font size for labels */
+.booking-form label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Close Button */
+.close-modal-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.close-modal-btn:hover {
+  background-color: #e60000;
+}
+
+/* Modal Fade-In Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Status message */
+.status-message {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: green;
+}
+
+/* Booking form styling */
+.booking-form .form-group {
+  margin-bottom: 12px; /* Reduced margin */
+}
+
+.booking-form label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+}
+
+.booking-form input {
+  width: 100%;
+  padding: 8px;
+  font-size: 0.95rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.booking-form button.submit-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.booking-form button.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.status-message {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: green;
+}
