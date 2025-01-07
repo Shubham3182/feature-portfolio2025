@@ -1,0 +1,128 @@
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Gallery Title */
+.gallery-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+}
+
+/* Gallery Image */
+.gallery-image {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Maintain aspect ratio */
+.gallery-item {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Fixed height for consistent box shape */
+}
+
+.gallery-image:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Admin Upload Section */
+.admin-upload {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.upload-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.upload-btn:hover {
+    background-color: #45a049;
+}
+
+/* Image Preview */
+.image-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.preview-image {
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.confirm-upload-btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.confirm-upload-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Hidden File Input */
+input[type="file"] {
+    display: none;
+}
+.loader {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #777;
+  }
+  

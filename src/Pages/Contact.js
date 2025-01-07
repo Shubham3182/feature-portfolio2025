@@ -11,15 +11,15 @@ const Contact = () => {
       <div className="contact-info">
         <div className="info-item">
           <h3>Email</h3>
-          <p>yourname@example.com</p>
+          <p>yuvrajisapure@gmail.com</p>
         </div>
         <div className="info-item">
           <h3>Phone</h3>
-          <p>+1 123-456-7890</p>
+          <p>+91 8623977711</p>
         </div>
         <div className="info-item">
           <h3>Address</h3>
-          <p>123, Your Street, Your City, Your Country</p>
+          <p>Whispering Woods,MIDC Road,Miraj</p>
         </div>
       </div>
 
