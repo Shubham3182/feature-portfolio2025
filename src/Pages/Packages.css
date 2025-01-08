@@ -2,7 +2,8 @@
 .packages {
   padding: 20px;
   text-align: center;
-  background: url("../Images/Background1.jpg") no-repeat center center/cover;
+  background: linear-gradient(to right, #d0e2f2, #f0d8f7); /* Light blue to soft lavender gradient */
+
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(255, 253, 253, 0.1);
   height: 100vh; /* Ensure the element has a height for background image to be visible */
@@ -148,19 +149,25 @@
   color: #333;
 }
 
-/* Close Button */
 .close-modal-btn {
-  background-color: #ff4d4d;
-  color: #fff;
-  padding: 6px 12px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.95rem;
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  font-size: 1.5rem; /* Size of the "X" */
+  font-weight: bold;
+  color: #333; /* Default color */
+  background: none; /* No background */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+  transition: color 0.2s ease;
 }
 
 .close-modal-btn:hover {
-  background-color: #e60000;
+  color: red; /* Highlight color on hover */
+}
+
+.close-modal-btn:focus {
+  outline: none; /* Remove focus outline */
 }
 
 /* Modal Fade-In Animation */
@@ -177,45 +184,179 @@
 
 /* Status message */
 .status-message {
-  margin-top: 10px;
-  font-size: 1rem;
+  margin-top: 8px; /* Reduced margin */
+  font-size: 0.9rem; /* Reduced font size */
   color: green;
+  text-align: center; /* Center align for better visual appeal */
 }
 
 /* Booking form styling */
+.booking-form {
+  width: 100%;
+  max-width: 350px; /* Compact width */
+  margin: auto;
+  padding: 15px; /* Reduced padding */
+  background-color: #f8f9fa; /* Light background for better contrast */
+  border-radius: 6px; /* Slightly rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+}
+
 .booking-form .form-group {
-  margin-bottom: 12px; /* Reduced margin */
+  margin-bottom: 10px; /* Reduced margin */
 }
 
 .booking-form label {
   display: block;
-  font-size: 1rem;
-  color: #333;
+  font-size: 0.85rem; /* Reduced font size */
+  color: #444; /* Slightly darker color for better readability */
+  margin-bottom: 4px; /* Reduced space between label and input */
 }
 
 .booking-form input {
   width: 100%;
-  padding: 8px;
-  font-size: 0.95rem;
-  border-radius: 5px;
+  padding: 6px; /* Reduced padding */
+  font-size: 0.9rem; /* Reduced font size */
+  border-radius: 4px; /* Compact corners */
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
 .booking-form button.submit-btn {
-  padding: 10px 20px;
+  padding: 8px 16px; /* Reduced padding */
   background-color: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px; /* Compact corners */
   cursor: pointer;
+  font-size: 0.9rem; /* Reduced font size */
+  transition: background-color 0.3s ease;
 }
 
 .booking-form button.submit-btn:hover {
   background-color: #0056b3;
 }
 
-.status-message {
-  margin-top: 15px;
-  font-size: 1.1rem;
-  color: green;
+/* Compact form group spacing */
+.booking-form .form-group:last-child {
+  margin-bottom: 0; /* Remove extra space below last input */
+}
+/* Mobile View */
+@media only screen and (max-width: 768px) {
+  /* Main Package Container */
+  .packages {
+    padding: 15px;
+    height: auto; /* Remove the fixed height */
+  }
+
+  /* Grid for Packages */
+  .package-grid {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    gap: 20px;
+  }
+
+  /* Package Card Styling */
+  .package-card {
+    padding: 15px; /* Reduced padding */
+    height: auto; /* Remove fixed height for better layout */
+  }
+
+  .package-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .package-card .price {
+    font-size: 1.2rem;
+  }
+
+  .package-card .description {
+    font-size: 1rem;
+  }
+
+  .package-card .features-list li {
+    font-size: 1rem;
+  }
+
+  .package-card .book-btn {
+    padding: 8px 16px;
+    font-size: 1rem;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    max-width: 90%;
+    padding: 10px;
+  }
+
+  /* Booking Form */
+  .booking-form {
+    max-width: 90%;
+  }
+
+  .booking-form input {
+    font-size: 0.85rem;
+  }
+
+  .booking-form button.submit-btn {
+    font-size: 0.85rem;
+  }
+}
+
+/* Desktop View */
+@media only screen and (min-width: 769px) {
+  /* Main Package Container */
+  .packages {
+    padding: 30px;
+  }
+
+  /* Grid for Packages */
+  .package-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  /* Package Card Styling */
+  .package-card {
+    padding: 20px;
+    height: auto;
+  }
+
+  .package-card h3 {
+    font-size: 1.6rem;
+  }
+
+  .package-card .price {
+    font-size: 1.4rem;
+  }
+
+  .package-card .description {
+    font-size: 1.1rem;
+  }
+
+  .package-card .features-list li {
+    font-size: 1.1rem;
+  }
+
+  .package-card .book-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* Modal Content */
+  .modal-content {
+    max-width: 400px;
+    padding: 15px;
+  }
+
+  /* Booking Form */
+  .booking-form {
+    max-width: 350px;
+  }
+
+  .booking-form input {
+    font-size: 0.9rem;
+  }
+
+  .booking-form button.submit-btn {
+    font-size: 0.95rem;
+  }
 }

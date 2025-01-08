@@ -7,8 +7,13 @@
     135deg,
     rgba(61, 119, 182, 0.54),
     rgba(151, 48, 48, 0.58)
-  ); /* Gradient background */
+  );
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures footer stays at the bottom */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  transition: padding-top 0.3s ease-in-out; /* Smooth transition for padding */
 }
 
 /* Navbar Styling */
@@ -18,12 +23,14 @@
   align-items: center;
   padding: 10px 20px;
   background: #fff;
+  position: relative;
 }
 
 .navbar .logo img {
   height: 60px;
 }
 
+/* Navbar links */
 .navbar-links {
   display: flex;
   gap: 40px;
@@ -42,21 +49,101 @@
   color: #007bff;
 }
 
+/* For mobile screens */
+@media (max-width: 768px) {
+  .App-header .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Space between links */
+  }
+
+  .navbar .logo img {
+    height: 50px; /* Adjust logo size */
+  }
+
+  /* Mobile Menu Toggle Button */
+  .navbar-toggle {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Align with the top of the navbar */
+    right: 20px; /* Align to the right side */
+  }
+
+  .navbar-toggle svg {
+    background: none;
+    margin-top: 18px;
+    border: none;
+    color: #000; /* Change color of hamburger icon */
+    width: 50px; /* Adjust size of hamburger icon */
+    height: 35px;
+  }
+
+  /* Mobile Menu */
+  .navbar-links.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white; /* Set background to white */
+    position: fixed; /* Fix the position to avoid overlap */
+    top: 60px; /* Position below the navbar */
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 10;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add slight shadow for better visibility */
+    border-radius: 8px; /* Rounded corners */
+  }
+
+  .navbar-links.mobile-menu.active {
+    display: flex;
+  }
+
+  .navbar-links li {
+    padding: 10px;
+    text-align: center;
+    background-color: transparent; /* No background color */
+    border-bottom: 1px solid #ddd; /* Add border between items */
+  }
+
+  .navbar-links li:hover {
+    background-color: #f7f7f7; /* Slightly highlight on hover */
+  }
+
+  /* Adjust main content when menu is opened */
+  .App.main-content-adjusted {
+    padding-top: 60px; /* Add space at the top for the mobile menu */
+  }
+}
+
+/* Hide hamburger icon on desktop view */
+@media (min-width: 769px) {
+  .navbar-toggle {
+    display: none; /* Hide hamburger icon on desktop */
+  }
+}
+
 /* Main Section Styling */
 main {
   padding: 20px;
   text-align: center;
+  transition: margin-top 0.3s ease; /* Smooth transition for margin */
 }
 
-/* Disable scrolling */
-body.lock-scroll {
-  overflow: hidden;
-}
-
+/* Footer Styling */
 .App-footer {
   background-color: #222;
   color: #fff;
-  padding: 20px 0;
   text-align: center;
 }
 
@@ -124,8 +211,8 @@ body.lock-scroll {
 
 .footer-bottom {
   border-top: 1px solid #444;
-  padding: 2px 0;
-  font-size: 0.9rem;
+  padding: 1px 0;
+  font-size: 0.8rem;
   color: #888;
   text-align: center;
 }

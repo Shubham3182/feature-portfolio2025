@@ -33,6 +33,7 @@ body {
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
+  animation: heroAppear 1s ease-out;
 }
 
 .hero:hover {
@@ -63,6 +64,7 @@ body {
   margin: 10px 0;
   font-weight: 700;
   color: #333;
+  animation: slideIn 1s ease-out;
 }
 
 .hero-text p {
@@ -87,6 +89,7 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: fadeIn 1.5s ease-in-out;
 }
 
 .hero-buttons .btn-primary {
@@ -119,14 +122,14 @@ body {
 }
 
 .hero-image img:hover {
-  transform: scale(1.05);
+  animation: imageHover 0.3s ease-in-out;
 }
 
 /* Best Moments Section */
 .best-moments {
   margin: 80px 0;
   text-align: center;
-  animation: fadeInUp 1s ease-out;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 .best-moments h2 {
@@ -156,8 +159,7 @@ body {
 }
 
 .image-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  animation: bounceCard 0.3s ease-out;
 }
 
 .image-card img {
@@ -182,6 +184,7 @@ body {
 .discount-offers {
   margin: 80px 0;
   text-align: center;
+  animation: fadeInUp 1.2s ease-out;
 }
 
 .discount-offers h2 {
@@ -211,8 +214,7 @@ body {
 }
 
 .offer-card:hover {
-  transform: translateY(-15px);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  animation: bounceCard 0.3s ease-out;
 }
 
 .offer-card img {
@@ -254,7 +256,7 @@ body {
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   100% {
     opacity: 1;
@@ -265,10 +267,49 @@ body {
 @keyframes slideIn {
   0% {
     opacity: 0;
-    transform: translateX(-20px);
+    transform: translateX(-30px);
   }
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+/* New Animation for Hero Section */
+@keyframes heroAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* New Animation for Image Hover (Scale with Shadows) */
+@keyframes imageHover {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    transform: scale(1.1);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* New Animation for Card Hover (Bounce Effect) */
+@keyframes bounceCard {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
 }

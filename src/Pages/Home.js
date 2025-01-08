@@ -44,16 +44,22 @@ function Home() {
         <h2>Our Best Moments</h2>
         <div className="image-row">
           <div className="image-card">
-            <img src={containerImage1} alt="Gallery 1" />
-            <p>Memorable Landscapes</p>
+            <Link to="/gallery/landscapes">
+              <img src={containerImage1} alt="Gallery 1" />
+              <p>Memorable Landscapes</p>
+            </Link>
           </div>
           <div className="image-card">
-            <img src={containerImage2} alt="Gallery 2" />
-            <p>Unforgettable Weddings</p>
+            <Link to="/gallery/weddings">
+              <img src={containerImage2} alt="Gallery 2" />
+              <p>Unforgettable Weddings</p>
+            </Link>
           </div>
           <div className="image-card">
-            <img src={containerImage3} alt="Gallery 3" />
-            <p>Magical Pre-Weddings</p>
+            <Link to="/gallery/pre-weddings">
+              <img src={containerImage3} alt="Gallery 3" />
+              <p>Magical Pre-Weddings</p>
+            </Link>
           </div>
         </div>
       </section>

@@ -26,43 +26,46 @@ const Packages = () => {
         "2 Hours Session",
         "Outdoor Locations",
         "High-Resolution Photos",
-        "2 Edited Photos"
+        "2 Edited Photos",
       ],
     },
     {
       id: 2,
       name: "Wedding Shoot",
       price: "$1500",
-      description: "Immortalize your wedding day with elegant and stunning photos.",
+      description:
+        "Immortalize your wedding day with elegant and stunning photos.",
       features: [
         "Full Day Coverage",
         "Bridal and Groom Shots",
         "Wedding Ceremony & Reception Photos",
-        "100+ Edited Photos"
+        "100+ Edited Photos",
       ],
     },
     {
       id: 3,
       name: "Birthday Shoot",
       price: "$300",
-      description: "Celebrate your special day with a fun and memorable photoshoot.",
+      description:
+        "Celebrate your special day with a fun and memorable photoshoot.",
       features: [
         "2 Hours Session",
         "Props and Themes",
         "Personalized Photo Album",
-        "15 Edited Photos"
+        "15 Edited Photos",
       ],
     },
     {
       id: 4,
       name: "Corporate Event",
       price: "$2000",
-      description: "Professional photos to represent your corporate event or seminar.",
+      description:
+        "Professional photos to represent your corporate event or seminar.",
       features: [
         "Full Day Event Coverage",
         "Corporate Branding Photography",
         "Event Group Shots",
-        "300+ Photos Delivered"
+        "300+ Photos Delivered",
       ],
     },
   ];
@@ -94,9 +97,11 @@ const Packages = () => {
       setBookingStatus("Please fill in all fields.");
       return;
     }
-    
+
     // Booking Successful
-    setBookingStatus("Booking Successful! Thank you for choosing our services.");
+    setBookingStatus(
+      "Booking Successful! Thank you for choosing our services."
+    );
 
     // Reset the form and close the modal after booking
     setContactInfo({ name: "", email: "", phone: "" });
@@ -139,7 +144,10 @@ const Packages = () => {
 
       {/* Modal for Booking Form */}
       {isModalVisible && (
-        <div className={`modal-overlay ${isModalVisible ? "show" : ""}`} onClick={handleCloseModal}>
+        <div
+          className={`modal-overlay ${isModalVisible ? "show" : ""}`}
+          onClick={handleCloseModal}
+        >
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>Book {selectedPackage.name}</h2>
             <form className="booking-form" onSubmit={handleSubmit}>
@@ -206,9 +214,13 @@ const Packages = () => {
               </button>
             </form>
 
-            {bookingStatus && <div className="status-message">{bookingStatus}</div>}
+            {bookingStatus && (
+              <div className="status-message">{bookingStatus}</div>
+            )}
 
-            <button className="close-modal-btn" onClick={handleCloseModal}>Close</button>
+            <button className="close-modal-btn" onClick={handleCloseModal}>
+              &times; {/* HTML entity for "X" symbol */}
+            </button>
           </div>
         </div>
       )}
