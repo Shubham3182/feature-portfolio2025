@@ -8,29 +8,36 @@ const Portfolio = () => {
   const projects = [
     {
       title: "Prewedding Event",
-      description: "Make your prewedding moments unforgettable with our stunning photography.",
+      description:
+        "Make your prewedding moments unforgettable with our stunning photography.",
       category: "prewedding",
-      image: "https://example.com/path-to-your-prewedding-image.jpg", // Update this path as needed
+      icon: "fa-solid fa-heart", // Font Awesome icon for prewedding
     },
     {
       title: "Wedding Photography",
       description: "Capture your precious moments with elegance.",
       category: "wedding",
-      image: "https://example.com/path-to-your-wedding-image.jpg", // Update this path as needed
+      icon: "fa-solid fa-ring", // Font Awesome icon for wedding
     },
     {
       title: "Birthday Shoots",
       description: "Make birthdays more memorable with stunning shots.",
       category: "birthday",
-      image: "https://example.com/path-to-your-birthday-image.jpg", // Update this path as needed
+      icon: "fa-solid fa-cake-candles", // Font Awesome icon for birthday
     },
     {
       title: "Travel Photography",
       description: "Beautifully document your adventures.",
       category: "travel",
-      image: "https://example.com/path-to-your-travel-image.jpg", // Update this path as needed
+      icon: "fa-solid fa-plane", // Font Awesome icon for travel
     },
-  
+    {
+      title: "Landscapes",
+      description:
+        "Immortalize nature's beauty with stunning landscape photography.",
+      category: "landscapes",
+      icon: "fa-solid fa-mountain", // Font Awesome icon for landscapes
+    },
   ];
 
   const handleCardClick = (category) => {
@@ -51,11 +58,9 @@ const Portfolio = () => {
             key={index}
             onClick={() => handleCardClick(project.category)} // Navigate on click
           >
-            <img
-              src={project.image}
-              alt={project.title}
-              className="portfolio-image"
-            />
+            <div className="portfolio-icon-container">
+              <i className={project.icon}></i> {/* Font Awesome Icon */}
+            </div>
             <div className="card-overlay">
               <h3 className="card-title">{project.title}</h3>
               <p className="card-description">{project.description}</p>

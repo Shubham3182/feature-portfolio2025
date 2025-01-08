@@ -1,43 +1,41 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import "./Gallery.css";
-
 import Homebg1 from "../Images/Homebg1.jpg";
 import Homebg2 from "../Images/Homebg2.jpg";
 import Homebg3 from "../Images/Homebg3.jpg";
 import Homebg4 from "../Images/Homebg4.jpg";
 import Homebg5 from "../Images/Homebg5.jpg";
+import Modal from "./Modal"; // Correct path to Modal
 
 const Gallery = () => {
   const { category } = useParams();
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
-  const loaderRef = useRef(null);  // Reference to the loader
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const loaderRef = useRef(null);
 
-  // Simulate fetching images based on category
   const fetchImages = () => {
-    const newImages = [
-      Homebg1, Homebg2, Homebg3, Homebg4, Homebg5,
-    ];
-
+    const newImages = [Homebg1, Homebg2, Homebg3, Homebg4, Homebg5];
     setImages((prevImages) => [...prevImages, ...newImages]);
   };
 
   useEffect(() => {
-    fetchImages(); // Initial images loading
+    fetchImages(); 
 
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !loading) {
-          setLoading(true);  // Set loading state
-          fetchImages();  // Fetch more images
-          setLoading(false);  // Reset loading state
+          setLoading(true); 
+          fetchImages(); 
+          setLoading(false); 
         }
       },
-      { rootMargin: "100px" }  // Start loading when the loader is 100px from view
+      { rootMargin: "100px" }
     );
 
-    const loaderCurrent = loaderRef.current; // Store ref value in a variable
+    const loaderCurrent = loaderRef.current;
 
     if (loaderCurrent) {
       observer.observe(loaderCurrent);
@@ -48,7 +46,17 @@ const Gallery = () => {
         observer.unobserve(loaderCurrent);
       }
     };
-  }, [loading]);  // Re-run when loading state changes
+  }, [loading]);
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedImage(null);
+  };
 
   return (
     <div className="gallery-container">
@@ -59,8 +67,9 @@ const Gallery = () => {
             <div className="gallery-item" key={index}>
               <img
                 src={image}
-                alt={`${category} ${index + 1}`}  // Simplified alt text
+                alt={`${category} ${index + 1}`}
                 className="gallery-image"
+                onClick={() => openModal(image)}  // onClick added here
               />
             </div>
           ))
@@ -71,6 +80,9 @@ const Gallery = () => {
       <div ref={loaderRef} className="loader">
         {loading && <p>Loading more images...</p>}
       </div>
+
+      {/* Modal */}
+      {modalOpen && <Modal image={selectedImage} onClose={closeModal} />}
     </div>
   );
 };

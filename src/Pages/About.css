@@ -1,21 +1,31 @@
 /* Apply base styles */
 .about-container {
   padding: 40px;
-  background: linear-gradient(135deg, #ffffff, #f4f4f9); /* Gradient background */
+  background: linear-gradient(to right, #d0e2f2, #f0d8f7); /* Light blue to soft lavender gradient */
+
   color: #333; /* Text color */
   line-height: 1.6; /* Line height for better readability */
   font-family: "Roboto", sans-serif; /* Font style */
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards; /* Animation to fade in the entire section */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* Header */
 .about-header {
-  text-align: center;
   margin-bottom: 40px;
   opacity: 0;
   animation: slideInFromTop 1s ease-in-out 0.5s forwards; /* Animation to slide in header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Header Text */
 .about-header h1 {
   font-size: 36px;
   color: #333;
@@ -33,10 +43,13 @@
   animation: fadeIn 1s ease-in-out 1.5s forwards; /* Paragraph fade-in */
 }
 
+/* About Image */
 .about-image {
   opacity: 0;
   animation: fadeIn 1s ease-in-out 2s forwards; /* Fade-in for image */
   margin: 20px auto;
+  display: flex;
+  justify-content: center;
 }
 
 .about-image img {
@@ -49,6 +62,7 @@
   animation: scaleUp 1s ease-in-out 2s forwards; /* Scale-up animation */
 }
 
+/* Experience Section */
 .about-experience {
   margin: 40px 0;
   opacity: 0;
@@ -66,8 +80,11 @@
   color: #555;
   opacity: 0;
   animation: fadeIn 1s ease-in-out 3s forwards; /* Fade-in for list */
+  padding-left: 20px;
+  text-align: left;
 }
 
+/* Contact Section */
 .about-contact {
   text-align: center;
   margin-top: 40px;
@@ -75,6 +92,7 @@
   animation: slideInFromBottom 1s ease-in-out 3.5s forwards; /* Slide-in for contact section */
 }
 
+/* Contact Button */
 .contact-button {
   padding: 10px 20px;
   background-color: #ff7f50;
