@@ -10,12 +10,16 @@ import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
 import { FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import ScrollToTop from "./Pages/ScrollToTop"; // Import the ScrollToTop component
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
     <Router>
       <ScrollToTop /> {/* Add ScrollToTop here */}
       <div className="App">
+        {/* Add SpeedInsights component for performance tracking */}
+        <SpeedInsights />
+
         {/* Navbar Section */}
         <header className="App-header">
           <nav className="navbar">
@@ -112,7 +116,7 @@ function App() {
                 </li>
                 <li>
                   <Link to="/packages">Packages</Link>
-                </li>          
+                </li>
                 <li>
                   <Link to="/portfolio">Portfolio</Link>
                 </li>
